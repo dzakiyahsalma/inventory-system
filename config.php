@@ -3,12 +3,17 @@ include('database.php');
 
 if (isset($_POST['reg_user'])) {
     $username = mysqli_real_escape_string($database, $_POST['username']);
+    $nama = mysqli_real_escape_string($database, $_POST['nama']);
     $email = mysqli_real_escape_string($database, $_POST['email']);
     $password_1 = mysqli_real_escape_string($database, $_POST['password_1']);
     $password_2 = mysqli_real_escape_string($database, $_POST['password_2']);
+    $level = mysqli_real_escape_string($database, $_POST['level']);
 
     if (empty($username)) {
         array_push($error, "Username is Required");
+    }
+    if (empty($nama)) {
+        array_push($error, "Name is Required");
     }
     if (empty($email)) {
         array_push($error, "Email is Required");
@@ -36,7 +41,7 @@ if (isset($_POST['reg_user'])) {
 
     if (count($error) == 0) {
         $password = md5($password_1);
-        $query = "INSERT INTO registration (username, email, password) VALUES ('$username', '$email', '$password')";
+        $query = "INSERT INTO registration (username, nama, email, password, level) VALUES ('$username', '$nama', '$email', '$password', '$level')";
         mysqli_query($database, $query);
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
