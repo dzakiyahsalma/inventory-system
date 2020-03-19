@@ -13,6 +13,9 @@ $result = mysqli_query($database, "SELECT * FROM insertdata");
 </head>
 
 <body>
+    <br>
+    <a href="insert_data.php">Tambahkan Barang</a>
+    </br>
     <?php
     if (mysqli_num_rows($result) > 0) {
     ?>
@@ -26,6 +29,7 @@ $result = mysqli_query($database, "SELECT * FROM insertdata");
                 </td>
                 <td>PIC</td>
                 <td>Status</td>
+                <td>.</td>
             </tr>
             <?php
             $i = 0;
@@ -39,6 +43,10 @@ $result = mysqli_query($database, "SELECT * FROM insertdata");
                     <td><?php echo $row["id_pic"]; ?></td>
                     <td><?php echo $row["nama_pic"]; ?></td>
                     <td><?php echo $row["status"]; ?></td>
+                    <td>
+                        <a class="edit" href="edit.php?id=<?php echo $row['id'] ?>">Edit</a>
+                        <a class="delete" href="delete.php?id=<?php echo $row['id'] ?>">Delete</a>
+                    </td>
                 </tr>
             <?php
                 $i++;
