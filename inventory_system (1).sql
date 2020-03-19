@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2020 at 03:56 PM
+-- Generation Time: Mar 19, 2020 at 06:39 AM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -39,17 +39,6 @@ CREATE TABLE `insertdata` (
   `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `insertdata`
---
-
-INSERT INTO `insertdata` (`id`, `code_unique`, `nama_barang`, `location`, `date`, `id_pic`, `nama_pic`, `status`) VALUES
-(1, 'MNT01', 'Monitor', 'Pabrik 1', '2020-12-31', 'ABC', '123', 'Ready Stock'),
-(2, 'MSE01', 'Mouse', 'Aaaa', '2018-11-30', '123', 'wfg', 'Dipinjam'),
-(3, 'MNT02', 'Monitor', 'Gedung Graha', '2019-10-29', '123', 'ABC', 'Ready Stock'),
-(4, 'KBR01', 'Keyboard', 'ABC', '2019-10-30', '123', 'ASD', 'Ready Stock'),
-(5, 'SCN01', 'Scanner', 'QWE', '2019-11-30', '123', 'ABC', 'Ready');
-
 -- --------------------------------------------------------
 
 --
@@ -59,19 +48,12 @@ INSERT INTO `insertdata` (`id`, `code_unique`, `nama_barang`, `location`, `date`
 CREATE TABLE `registration` (
   `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
+  `nama` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `level` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `registration`
---
-
-INSERT INTO `registration` (`id`, `username`, `email`, `password`, `created_at`) VALUES
-(1, 'admin', 'admin@admin', '21232f297a57a5a743894a0e4a801fc3', '2020-02-17 14:39:01'),
-(2, 'dzakiyah', 'dzakiyah@dzak', '75da24d5570e6a068905701ddba19496', '2020-03-02 10:59:45'),
-(3, 'pq', 'popopop@popo.com', '382da15dfcfa571b3973cb5ae2223f76', '2020-03-06 16:26:48');
 
 --
 -- Indexes for dumped tables
@@ -98,12 +80,12 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `insertdata`
 --
 ALTER TABLE `insertdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
