@@ -51,9 +51,6 @@ include('config.php')
         <div class="input-group">
             <button type="submit" class="btn" name="insert">Tambahkan</button>
         </div>
-        <div class="input-group">
-            <button type="submit" class="btn" name="qrcode">Generate QR Code</button>
-        </div>
     </form>
 </body>
 
